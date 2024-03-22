@@ -6,7 +6,6 @@ public class Main {
         int total = 0;
         int month = 0;
         while (total <= 2_459_000) {
-            total = total + total / 100;
             total = total + money;
             month = month + 1;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей");
@@ -75,14 +74,11 @@ public class Main {
         }
         while (friday < 31);
         //task8
-        int year = 0;
         int yearNow = 2024;
-        do {
+        for (int year = 0; year <= (yearNow + 100); year += 79) {
             if (year >= (yearNow - 200)) {
                 System.out.println(year);
             }
-            year += 79;
         }
-        while (year <= (yearNow + 100));
     }
 }
