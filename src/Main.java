@@ -2,13 +2,13 @@ public class Main {
 
     public static void main(String[] args) {
         //task1
-        int money = 15000;
-        int total = 0;
+        double money = 15000;
+        double total = 0;
         int month = 0;
         while (total <= 2_459_000) {
             total = total + money;
             month = month + 1;
-            System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей");
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + (long) total + " рублей");
         }
         //task2
         int start = 1;
@@ -37,7 +37,7 @@ public class Main {
             month++;
             total = total + total * 7 / 100;
             total = total + money;
-            System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей");
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + (long) total + " рублей");
         }
         System.out.println("Всего нужно месяцев - " + month);
         //task5
@@ -49,7 +49,7 @@ public class Main {
             total = total + total * 7 / 100;
             total = total + money;
             if (month % 6 == 0) {
-                System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей");
+                System.out.println("Месяц " + month + ", сумма накоплений равна " + (long) total + " рублей");
             }
         }
         System.out.println("Всего нужно месяцев - " + month);
@@ -62,7 +62,7 @@ public class Main {
             total = total + total * 7 / 100;
             total = total + money;
             if (month % 6 == 0) {
-                System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей");
+                System.out.println("Месяц " + month + ", сумма накоплений равна " + (long) total + " рублей");
             }
         }
         while (month <= (9 * 12));
@@ -72,11 +72,11 @@ public class Main {
             System.out.println("Сегодня пятница, " + friday + "-е число. Необходимо подготовить отчет");
             friday = friday + 7;
         }
-        while (friday < 31);
+        while (friday <= 31);
         //task8
         int yearNow = 2024;
-        for (int year = 0; year <= (yearNow + 100); year += 79) {
-            if (year >= (yearNow - 200)) {
+        for (int year = yearNow-200; year <= (yearNow + 100); year ++) {
+            if (year%79==0) {
                 System.out.println(year);
             }
         }
